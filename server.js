@@ -30,7 +30,7 @@ async function main() {
     //Routes
         app.use('/employees', employeeR);           // employees router
         app.use('/locations', locationR);           // locations router
-        app.use('/timeOffRequests', timeOffR);      // timeo off requests router
+        app.use('/timeOffRequests', timeOffR);      // time off requests router
 
     
     // Populate collections with initial data

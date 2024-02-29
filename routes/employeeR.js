@@ -23,24 +23,55 @@ router.get('/:id', (req, res) => {
 
 // POST a new employee --- Create POST routes
 router.post('/', async (req, res) => {
-    //name: "Thor Odinson" , hireYear: 2020, title: "God of Thunder"
+    try {
+        const newEmployee = {
+            id: req.body.id,
+            name: req.body.name,
+            hireYear: req.body.hireYear,
+            title: req.body.title
+        };
 
-    res.send("New employee has been added.");
+        const result = await db.collection('employees').insertOne(newEmployee);
+        res.send("New employee has been added.");
+    } catch (err) {
+        console.error('Error adding employee:', err);
+        res.status(500).send('Error adding employee');
+    }
 });
 
-// PATCH (update) an employee by ID --- Create PATCH or PUT routes for data
-router.patch('/:id', async (req, res) => {
-    //need to create additionally
-    res.send("Employee data updated.");
+// PATCH/PUT (update) an employee by ID --- Create PATCH or PUT routes for data
+router.put('/:id', async (req, res) => {
+    try {
+        const employeeId = parseInt(req.params.id);
+        const updatedEmployee = {
+            $set: {
+                id: req.body.id,
+                name: req.body.name,
+                hireYear: req.body.hireYear,
+                title: req.body.title
+            }
+        };
+        const result = await db.collection('employees').updateOne({ id: employeeId }, updatedEmployee);
+        res.send("Employee data updated.");
+    } catch (err) {
+        console.error('Error updating employee:', err);
+        res.status(500).send('Error updating employee');
+    }
 });
 
 // DELETE an employee by ID --- Create DELETE routes for data
 router.delete('/:id', async (req, res) => {
-        //need to create additionally
-
-    //let result = await db.collection('employees').deleteOne({ _id: ObjectID(id) });
-    res.send("Employee deleted.");
+    try {
+        const employeeId = parseInt(req.params.id);
+        const result = await db.collection('employees').deleteOne({ id: employeeId });
+        res.send('Employee deleted');
+    } catch (err) {
+        console.error('Error deleting employee:', err);
+        res.status(500).send('Error deleting employee');
+    }
 });
 
-module.exports = router;
-//export default router; // terminal error
+module.exports = router; // Export the router instance
+
+
+    //name: "Thor Odinson" , hireYear: 2020, title: "God of Thunder"
