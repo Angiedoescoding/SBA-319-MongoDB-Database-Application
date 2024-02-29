@@ -1,11 +1,17 @@
 const express = require('express');
 const router = express.Router();
 
-const timeOffRequests = [
+// const timeOffRequests = [
 
-    { id: 1, date: "January 1, 2024", typeOffRequest: "Personal-Day", hoursADay: 8 },
-    { id: 2, date: "March 25, 2024", typeOffRequest: "Vacation", hoursADay: 8 },
-    { id: 3, date: "June 10, 2024", typeOffRequest: "Sick Leave", hoursADay: 3 }
+//     { id: 1, date: "January 1, 2024", typeOffRequest: "Personal-Day", hoursADay: 8 },
+//     { id: 2, date: "March 25, 2024", typeOffRequest: "Vacation", hoursADay: 8 },
+//     { id: 3, date: "June 10, 2024", typeOffRequest: "Sick Leave", hoursADay: 3 }
+// ];
+
+const timeOffRequests = [
+    { id: 1, date: new Date("2024-01-01"), typeOffRequest: "Personal-Day", hoursADay: 8 },
+    { id: 2, date: new Date("2024-03-25"), typeOffRequest: "Vacation", hoursADay: 8 },
+    { id: 3, date: new Date("2024-06-10"), typeOffRequest: "Sick Leave", hoursADay: 3 }
 ];
 
 // GET all time off requests

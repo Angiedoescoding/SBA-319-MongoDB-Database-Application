@@ -39,9 +39,9 @@ async function main() {
         const timeOffRequestsData = require('./utilities-data/timeOffRequests');
         const locationsData = require('./utilities-data/locations');
 
-    // db.collection('employees').insertMany(employeesData);    // error I am seeing: MongoInvalidArgumentError: Argument "docs" must be an array of documents at main (/Users/anzhelikavalkova/Desktop/Per-Scholas/MongoDB/MongoDB-319-SBA/server.js:42:36)
-    // db.collection('timeOffRequests').insertMany(timeOffRequestsData);
-    // db.collection('locations').insertMany(locationsData);
+    db.collection('employees').insertMany(employeesData);    // error I am seeing: MongoInvalidArgumentError: Argument "docs" must be an array of documents at main (/Users/Per-Scholas/MongoDB/MongoDB-319-SBA/server.js:42:36) --------- > fixed by adding data and module export to the js files of the utilities-data folder
+    db.collection('timeOffRequests').insertMany(timeOffRequestsData);
+    db.collection('locations').insertMany(locationsData);
 
 
     // Global error handling
@@ -60,13 +60,3 @@ async function main() {
 }
 
 main();         // calling the function to start the application
-
-
-// Populate collections with initial data
-// const employeesData = require('./utilities-data/employees');
-// const timeOffRequestsData = require('./utilities-data/timeOffRequests');
-// const locationsData = require('./utilities-data/locations');
-
-// db.collection('employees').insertMany(employeesData);
-// db.collection('timeOffRequests').insertMany(timeOffRequestsData);
-// db.collection('locations').insertMany(locationsData)
