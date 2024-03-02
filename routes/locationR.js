@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+//const locationsData = require('../utilities-data/locations')
+
 
 const locations = [
     { id: 1, depLoc: "Asgard", zip: 111111 },

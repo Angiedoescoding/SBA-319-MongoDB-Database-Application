@@ -26,3 +26,7 @@ This is a small Node.js, Express, and MongoDB server application that manages em
 <li>Replace `your_mongodb_atlas_uri` with your MongoDB Atlas URI.</li>
 <li>Start the server using `node server.js`.</li>
 </ol>
+
+## Data Validation
+
+![Image]((MongoDB-SBA-319-Validation.jpg))

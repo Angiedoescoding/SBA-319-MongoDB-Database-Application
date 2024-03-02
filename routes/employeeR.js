@@ -2,6 +2,8 @@
 
 const express = require('express');
 const router = express.Router();
+//const employeesData = require('../utilities-data/employees')
+
 
 const employees = [
     {id: 1, name: "Adam Smith", hireYear: 2020, title: "QA Engineer" },
@@ -70,6 +72,7 @@ router.delete('/:id', async (req, res) => {
         res.status(500).send('Error deleting employee');
     }
 });
+""
 
 module.exports = router; // Export the router instance
 

@@ -1,5 +1,6 @@
-const express = require('express');
 // import { MongoClient } from 'mongodb'; // To load an ES module, set "type": "module" in the package.json or use the .mjs extension.
+
+const express = require('express');
 const { MongoClient } = require('mongodb');
 const employeeR = require('./routes/employeeR');
 const locationR = require('./routes/locationR');
@@ -39,7 +40,7 @@ async function main() {
         const timeOffRequestsData = require('./utilities-data/timeOffRequests');
         const locationsData = require('./utilities-data/locations');
 
-    db.collection('employees').insertMany(employeesData);    // error I am seeing: MongoInvalidArgumentError: Argument "docs" must be an array of documents at main (/Users/Per-Scholas/MongoDB/MongoDB-319-SBA/server.js:42:36) --------- > fixed by adding data and module export to the js files of the utilities-data folder
+    db.collection('employees').insertMany(employeesData);    // error I am seeing: MongoInvalidArgumentError: Argument "docs" must be an array of documents at main (/Users/Per-Scholas/MongoDB/MongoDB-319-SBA/server.js:42:36) --------- > fixed by adding data and module export to the js files on the utilities-data folder
     db.collection('timeOffRequests').insertMany(timeOffRequestsData);
     db.collection('locations').insertMany(locationsData);
 
