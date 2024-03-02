@@ -29,4 +29,4 @@ This is a small Node.js, Express, and MongoDB server application that manages em
 
 ## Data Validation
 
-![Image]((MongoDB-SBA-319-Validation.jpg))
+![Image](MongoDB-SBA-319-Validation.jpg)
