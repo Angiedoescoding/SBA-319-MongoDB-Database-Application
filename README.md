@@ -21,9 +21,9 @@ This is a small Node.js, Express, and MongoDB server application that manages em
 <li>Create a `.env` file with the following content:</li>
     <ul>
         <li>PORT=3000</li>
-        <li>ATLAS_URI="your_mongodb_atlas_uri"</li>
+        <li>ATLAS_URI="your_mongodb_atlas_uri=l"</li>
     </ul>
-<li>Replace `your_mongodb_atlas_uri` with your MongoDB Atlas URI.</li>
+<li>Replace `your_mongodb_atlas_uri` with your MongoDB Atlas URL.</li>
 <li>Start the server using `node server.js`.</li>
 </ol>
 
